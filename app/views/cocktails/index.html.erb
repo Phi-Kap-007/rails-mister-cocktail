@@ -1,0 +1,7 @@
+<h1> Cocktail Index </h1>
+<% @cocktails.each do |cocktail| %>
+<h2><%= cocktail.name %></h2>
+  <%= link_to(cocktail.name, cocktail_path(cocktail.id)) %>
+  <% end %>
+
+
