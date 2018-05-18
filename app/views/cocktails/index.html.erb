@@ -1,7 +1,11 @@
 <h1> Cocktail Index </h1>
+<br>
 <% @cocktails.each do |cocktail| %>
 <h2><%= cocktail.name %></h2>
   <%= link_to(cocktail.name, cocktail_path(cocktail.id)) %>
-  <% end %>
+  <br>
+  <br>
+  <%= link_to "Delete", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
 
 

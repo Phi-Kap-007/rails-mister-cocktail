@@ -1,7 +1,7 @@
 <div class=“container”>
  <%= simple_form_for [@cocktail, @dose] do |f| %>
-   <%= f.association :ingredient, as: :check_boxes %>
+   <%= f.input :ingredient_id, collection: Ingredient.all %>
    <%= f.input :description %>
-   <%= f.submit "Swish Swish", class: "btn btn-primary" %>
+   <%= f.submit "Drink It Up", class: "btn btn-primary" %>
  <% end %>
 </div>
