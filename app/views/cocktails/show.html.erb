@@ -15,10 +15,10 @@
 <div class="container">
   <div class="row">
 <% @cocktail.doses.each do |f| %>
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+  <div class="card_new" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
       <div class="card-description">
         <h2><%= f.ingredient.name %></h2>
-        <p>f.description</p>
+        <p><%= f.description %></p>
         <%= link_to "Delete", dose_path(f), method: :delete, data: { confirm: "Are you sure?" } %>
       </div>
       <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
