@@ -1,12 +1,28 @@
 <br>
-<%= @cocktail.name %>
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+      <div class="card-description">
+        <h2><%= @cocktail.name %></h2>
+        <p>Check It Out</p>
+      </div>
+      <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
+      <%= link_to("", cocktail_path(@cocktail.id), class: "card-link") %>
+    </div>
 <br>
 <br>
 <%= link_to('Add Dosage', new_cocktail_dose_path(@cocktail)) %>
 <br>
 <br>
+<div class="container">
+  <div class="row">
 <% @cocktail.doses.each do |f| %>
-  <p><%= f.ingredient.name %></p>
-  <p><%= f.description %></p>
-  <%= link_to "Delete", dose_path(f), method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+      <div class="card-description">
+        <h2><%= f.ingredient.name %></h2>
+        <p>f.description</p>
+        <%= link_to "Delete", dose_path(f), method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
+      <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
+    </div>
+  <% end %>
+</div>
+</div>
